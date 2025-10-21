@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSwap | Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .text-primary { color: #059669; }
+        .bg-primary { background-color: #059669; }
+        .success-icon {
+            animation: bounce 1s ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen justify-center items-center">
+
+    <div class="max-w-md w-full bg-white p-10 rounded-xl shadow-2xl text-center">
+        <!-- Success Icon -->
+        <svg class="success-icon w-24 h-24 text-primary mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+
+        <!-- Success Message -->
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-3">Request Successful!</h1>
+        <p class="text-xl text-gray-600 mb-6">Your medicine pickup has been logged.</p>
+        
+        <!-- Redirect Message -->
+        <p class="text-sm text-gray-500">
+            Redirecting to your dashboard in <span id="countdown" class="font-bold text-primary">3</span> seconds...
+        </p>
+        <a href="#" id="redirectLink" class="mt-4 inline-block text-sm font-medium text-primary hover:underline">
+            Click here if you are not redirected.
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const countdownEl = document.getElementById('countdown');
+            const redirectLink = document.getElementById('redirectLink');
+            
+            // Get the request ID from the URL (passed from pickup_request.html)
+            const params = new URLSearchParams(window.location.search);
+            const requestId = params.get('id');
+            
+            // Define the target dashboard URL, passing status and id
+            const targetUrl = requestId 
+                ? `dashboard.html?status=success&id=${requestId}`
+                : `dashboard.html`; // Fallback if ID is missing
+
+            // Update the manual redirect link
+            redirectLink.href = targetUrl;
+
+            let count = 3;
+            countdownEl.textContent = count;
+
+            const interval = setInterval(() => {
+                count--;
+                countdownEl.textContent = count;
+
+                if (count <= 0) {
+                    clearInterval(interval);
+                    // Automatic redirection after countdown
+                    window.location.href = targetUrl;
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

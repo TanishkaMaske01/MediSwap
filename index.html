@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSwap | Safe Medicine Disposal and Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .text-primary { color: #059669; }
+        .bg-primary { background-color: #059669; }
+        .bg-secondary { background-color: #34d399; }
+        .btn-primary {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="shadow-md bg-white sticky top-0 z-10">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-primary">MediSwap</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="hidden sm:inline-block hover:text-primary transition font-medium">Home</a>
+                <!-- Primary CTA directs to login -->
+                <a href="login.html" class="btn-primary inline-block px-4 py-2 bg-primary text-white text-sm rounded-lg font-semibold hover:bg-secondary transition">Login / Signup</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-emerald-50 to-white pt-16 pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            
+            <!-- Text Content -->
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <p class="text-secondary text-lg font-semibold mb-2">Health & Safety for Rural Communities</p>
+                <h2 class="text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
+                    Safe Hands for Unused <span class="text-primary">Medicine</span>.
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">
+                    MediSwap provides a crucial, reliable service to collect expired or near-expiry medication from rural areas, preventing improper disposal and protecting families and the environment.
+                </p>
+                <a href="login.html" class="btn-primary inline-block px-8 py-4 bg-primary text-white text-lg font-bold rounded-xl shadow-lg hover:bg-secondary">
+                    Get Started (Request Pickup)
+                </a>
+            </div>
+
+            <!-- Image Placeholder (Illustrative SVG Icon) -->
+            <div class="md:w-1/2 flex justify-center p-4">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-full max-w-sm text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                    <path d="M15 9l-6 6M9 9l6 6"/>
+                    <path d="M12 6v6h6"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold text-gray-900 mb-4">Our Core Mission</h3>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    In many rural communities, lack of awareness and infrastructure leads to medicines being thrown in the trash or flushed, harming water sources and soil. MediSwap is the solution.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <!-- Card 1: Education -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg">
+                    <div class="text-primary text-4xl mb-3">💊</div>
+                    <h4 class="text-2xl font-semibold mb-2">Safe Disposal</h4>
+                    <p class="text-gray-600">We ensure unused and expired medicines are incinerated or processed according to strict government regulations, protecting the ecosystem.</p>
+                </div>
+                <!-- Card 2: Access -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg">
+                    <div class="text-primary text-4xl mb-3">📍</div>
+                    <h4 class="text-2xl font-semibold mb-2">Rural Outreach</h4>
+                    <p class="text-gray-600">Our dedicated team coordinates pickups directly from homes and local collection points in underserved rural areas.</p>
+                </div>
+                <!-- Card 3: Community -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg">
+                    <div class="text-primary text-4xl mb-3">🏡</div>
+                    <h4 class="text-2xl font-semibold mb-2">Community Trust</h4>
+                    <p class="text-gray-600">We build relationships with local leaders to educate communities on the importance of proper medicine handling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-4xl font-bold text-center mb-12">How MediSwap Works</h3>
+            <div class="flex flex-col lg:flex-row justify-between space-y-10 lg:space-y-0 lg:space-x-10">
+                
+                <!-- Step 1 -->
+                <div class="flex-1 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-3xl font-bold">1</div>
+                    <h4 class="text-2xl font-semibold mb-2">The Request</h4>
+                    <p class="text-emerald-100">A community member registers and logs in to signal they have medicine for pickup.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex-1 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-3xl font-bold">2</div>
+                    <h4 class="text-2xl font-semibold mb-2">Route Optimization</h4>
+                    <p class="text-emerald-100">Our logistics team bundles nearby requests to create efficient and timely pickup routes for our specialized vehicles.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex-1 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-3xl font-bold">3</div>
+                    <h4 class="text-2xl font-semibold mb-2">The Pickup</h4>
+                    <p class="text-emerald-100">A trained MediSwap representative collects the medication, provides proper documentation, and ensures safe packaging.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex-1 text-center">
+                    <div class="w-16 h-16 mx-auto mb-4 bg-secondary rounded-full flex items-center justify-center text-3xl font-bold">4</div>
+                    <h4 class="text-2xl font-semibold mb-2">Final Disposal</h4>
+                    <p class="text-emerald-100">Collected medicines are transported to certified facilities for safe, compliant, and ecological destruction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer with added links -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4 text-lg font-semibold">MediSwap | Safe Disposal. Healthy Communities.</p>
+            <div class="space-x-4 text-sm text-gray-400">
+                <a href="#contact" class="hover:text-primary">Contact Us</a>
+                <span class="text-gray-600">|</span>
+                <a href="#privacy" class="hover:text-primary">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <a href="#security" class="hover:text-primary">Security</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">© 2024 MediSwap Project. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediSwap | Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .text-primary { color: #059669; }
+        .bg-primary { background-color: #059669; }
+        .bg-secondary { background-color: #34d399; }
+        .btn-primary {
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #047857;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="shadow-md bg-white sticky top-0 z-10">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-extrabold text-primary">MediSwap</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:text-primary transition font-medium">Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content: Signup Form -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-emerald-50 to-white">
+        <div class="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-2xl">
+            <div class="text-center">
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    Create your MediSwap account
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    Register below to start requesting pickups.
+                </p>
+            </div>
+            <form class="mt-8 space-y-6" id="signupForm">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="email-address-reg" class="sr-only">Email address</label>
+                        <input id="email-address-reg" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-lg focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="Email address">
+                    </div>
+                    <div class="mt-px">
+                        <label for="password-reg" class="sr-only">Password</label>
+                        <input id="password-reg" name="password" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="Password (min 8 characters)">
+                    </div>
+                    <div class="mt-px">
+                        <label for="password-confirm" class="sr-only">Confirm Password</label>
+                        <input id="password-confirm" name="password-confirm" type="password" autocomplete="new-password" required class="appearance-none rounded-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-lg focus:outline-none focus:ring-primary focus:border-primary sm:text-sm" placeholder="Confirm Password">
+                    </div>
+                </div>
+
+                <!-- Simulated Signup Button -->
+                <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-lg font-medium rounded-lg text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary btn-primary">
+                    Register and Log In
+                </button>
+            </form>
+            
+            <div id="signupFeedback" class="mt-4 text-center font-medium text-primary hidden"></div>
+            
+            <div class="text-center">
+                <p class="text-sm text-gray-600">
+                    Already have an account? 
+                    <a href="login.html" class="font-medium text-primary hover:text-secondary">
+                        Sign in here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer with added links -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="mb-4 text-lg font-semibold">MediSwap | Safe Disposal. Healthy Communities.</p>
+            <div class="space-x-4 text-sm text-gray-400">
+                <a href="#contact" class="hover:text-primary">Contact Us</a>
+                <span class="text-gray-600">|</span>
+                <a href="#privacy" class="hover:text-primary">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <a href="#security" class="hover:text-primary">Security</a>
+            </div>
+            <p class="mt-4 text-sm text-gray-400">© 2024 MediSwap Project. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const signupForm = document.getElementById('signupForm');
+        const signupFeedback = document.getElementById('signupFeedback');
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const password = document.getElementById('password-reg').value;
+            const passwordConfirm = document.getElementById('password-confirm').value;
+
+            if (password !== passwordConfirm) {
+                signupFeedback.textContent = 'Error: Passwords do not match.';
+                signupFeedback.classList.remove('hidden', 'text-primary');
+                signupFeedback.classList.add('text-red-600');
+                return;
+            }
+            
+            // Show simulated feedback
+            signupFeedback.textContent = `Account created! Redirecting to login...`;
+            signupFeedback.classList.remove('hidden', 'text-red-600');
+            signupFeedback.classList.add('text-primary');
+            
+            // Simulate registration delay (1 second)
+            setTimeout(() => {
+                // Redirect to the login page
+                window.location.href = 'login.html';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
